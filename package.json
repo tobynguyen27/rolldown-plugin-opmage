@@ -1,0 +1,64 @@
+{
+	"name": "rolldown-plugin-opmage",
+	"version": "0.0.1",
+	"description": "A Rolldown plugin for optimizing images.",
+	"keywords": [
+		"rolldown-plugin"
+	],
+	"homepage": "https://github.com/tobynguyen27/rolldown-plugin-opmage#readme",
+	"bugs": {
+		"url": "https://github.com/tobynguyen27/rolldown-plugin-opmage/issues"
+	},
+	"license": "MIT",
+	"author": "Toby Nguyen <hi@tobynguyen.net>",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/tobynguyen27/rolldown-plugin-opmage.git"
+	},
+	"files": [
+		"dist"
+	],
+	"type": "module",
+	"sideEffects": false,
+	"exports": {
+		".": "./dist/index.mjs",
+		"./package.json": "./package.json"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "vp pack",
+		"dev": "vp pack --watch",
+		"test": "vp test",
+		"check": "vp check",
+		"prepublishOnly": "vp run build",
+		"prepare": "vp config",
+		"bump": "bumpp"
+	},
+	"dependencies": {
+		"pathe": "catalog:prod"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:types",
+		"@typescript/native-preview": "catalog:types",
+		"bumpp": "catalog:scripts",
+		"oxlint-plugin-case-police": "catalog:lint",
+		"typescript": "catalog:types",
+		"vite-plus": "catalog:build"
+	},
+	"peerDependencies": {
+		"@napi-rs/image": "catalog:dev",
+		"rolldown": "catalog:dev"
+	},
+	"devEngines": {
+		"packageManager": {
+			"name": "pnpm",
+			"version": "11.8.0",
+			"onFail": "download"
+		}
+	},
+	"engines": {
+		"node": "^22.18.0 || >=24.12.0"
+	}
+}

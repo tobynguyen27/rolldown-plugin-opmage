@@ -1,0 +1,17 @@
+{
+	"name": "playground",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vp dev",
+		"build": "vp build"
+	},
+	"dependencies": {
+		"@napi-rs/image": "catalog:dev",
+		"rolldown-plugin-opmage": "workspace:"
+	},
+	"devDependencies": {
+		"vite": "catalog:build",
+		"vite-plus": "catalog:build"
+	}
+}

@@ -1,0 +1,53 @@
+catalogs:
+  build:
+    vite: npm:@voidzero-dev/vite-plus-core@latest
+    vite-plus: ^0.2.0
+  dev:
+    '@napi-rs/image': ^1.12.1
+    rolldown: ^1.1.2
+    vitest: ^4.1.9
+  types:
+    '@types/node': '^25.6.2'
+    '@typescript/native-preview': 7.0.0-dev.20260618.1
+    typescript: ^6.0.3
+  scripts:
+    bumpp: ^11.1.0
+  lint:
+    oxlint-plugin-case-police: ^1.0.0
+  prod:
+    pathe: ^2.0.3
+
+minimumReleaseAgeExclude:
+  - '@oxc-project/types@0.137.0'
+  - '@rolldown/binding-android-arm64@1.1.2'
+  - '@rolldown/binding-darwin-arm64@1.1.2'
+  - '@rolldown/binding-darwin-x64@1.1.2'
+  - '@rolldown/binding-freebsd-x64@1.1.2'
+  - '@rolldown/binding-linux-arm-gnueabihf@1.1.2'
+  - '@rolldown/binding-linux-arm64-gnu@1.1.2'
+  - '@rolldown/binding-linux-arm64-musl@1.1.2'
+  - '@rolldown/binding-linux-ppc64-gnu@1.1.2'
+  - '@rolldown/binding-linux-s390x-gnu@1.1.2'
+  - '@rolldown/binding-linux-x64-gnu@1.1.2'
+  - '@rolldown/binding-linux-x64-musl@1.1.2'
+  - '@rolldown/binding-openharmony-arm64@1.1.2'
+  - '@rolldown/binding-wasm32-wasi@1.1.2'
+  - '@rolldown/binding-win32-arm64-msvc@1.1.2'
+  - '@rolldown/binding-win32-x64-msvc@1.1.2'
+  - oxlint-plugin-case-police@1.0.0
+  - rolldown@1.1.2
+
+overrides:
+  vite: 'catalog:build'
+  vitest: 'catalog:dev'
+
+peerDependencyRules:
+  allowAny:
+    - vite
+    - vitest
+  allowedVersions:
+    vite: '*'
+    vitest: '*'
+
+packages:
+  - playground
