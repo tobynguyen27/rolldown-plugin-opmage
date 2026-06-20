@@ -1,13 +1,19 @@
 import type { LossyWebpOptions, WebpOptions } from '@/options';
 import { Transformer } from '@napi-rs/image';
+import type { UnknownException } from 'effect/Cause';
+import { tryPromise, type Effect } from 'effect/Effect';
 
-export const webpCompressor = async (buffer: Uint8Array, options: WebpOptions): Promise<Buffer> => {
+export const webpCompressor = (
+	buffer: Uint8Array,
+	options: WebpOptions,
+): Effect<Buffer, UnknownException, never> => {
 	if (options.algorithm === 'lossless') return losslessWebpCompressor(buffer);
 
 	return lossyWebpCompressor(buffer, options);
 };
 
-const losslessWebpCompressor = async (buffer: Uint8Array) => new Transformer(buffer).webpLossless();
+const losslessWebpCompressor = (buffer: Uint8Array) =>
+	tryPromise(() => new Transformer(buffer).webpLossless());
 
-const lossyWebpCompressor = async (buffer: Uint8Array, { quality }: LossyWebpOptions) =>
-	new Transformer(buffer).webp(quality);
+const lossyWebpCompressor = (buffer: Uint8Array, { quality }: LossyWebpOptions) =>
+	tryPromise(() => new Transformer(buffer).webp(quality));

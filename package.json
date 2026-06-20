@@ -37,10 +37,12 @@
 		"bump": "bumpp"
 	},
 	"dependencies": {
+		"effect": "catalog:prod",
 		"p-limit": "catalog:prod",
 		"pathe": "catalog:prod"
 	},
 	"devDependencies": {
+		"@effect/language-service": "catalog:types",
 		"@types/node": "catalog:types",
 		"@typescript/native-preview": "catalog:types",
 		"bumpp": "catalog:scripts",
