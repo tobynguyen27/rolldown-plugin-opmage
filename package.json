@@ -37,6 +37,7 @@
 		"bump": "bumpp"
 	},
 	"dependencies": {
+		"p-limit": "catalog:prod",
 		"pathe": "catalog:prod"
 	},
 	"devDependencies": {

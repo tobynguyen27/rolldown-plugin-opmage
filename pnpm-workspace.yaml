@@ -16,6 +16,7 @@ catalogs:
     oxlint-plugin-case-police: ^1.0.0
   prod:
     pathe: ^2.0.3
+    p-limit: ^7.3.0
 
 minimumReleaseAgeExclude:
   - '@oxc-project/types@0.137.0'

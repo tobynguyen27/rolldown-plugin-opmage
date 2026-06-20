@@ -18,6 +18,7 @@ export type WebpOptions = LosslessWebpOptions | LossyWebpOptions;
 export type AvifOptions = AvifConfig;
 
 export type Options = {
+	concurrency: number;
 	png: PngOptions;
 	jpeg: JpegOptions;
 	webp: WebpOptions;
@@ -25,6 +26,7 @@ export type Options = {
 };
 
 export const defaultOptions: Options = {
+	concurrency: 5,
 	png: {
 		algorithm: 'lossless',
 		strip: true,
