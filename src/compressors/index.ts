@@ -1,6 +1,6 @@
 import { getFileExtension } from '@/utils/file';
 import { forEach, gen, type Effect } from 'effect/Effect';
-import type { OutputBundle } from 'rolldown';
+import type { OutputAsset, OutputBundle } from 'rolldown';
 import { pngCompressor } from './png';
 import { jpegCompressor } from './jpeg';
 import { webpCompressor } from './webp';
@@ -13,12 +13,13 @@ export const compressor = (
 	options: Options,
 ): Effect<void[], UnknownException> =>
 	forEach(
-		Object.values(bundles),
+		Object.values(bundles).filter(
+			(bundle): bundle is OutputAsset & { source: Uint8Array } =>
+				bundle.type === 'asset' && typeof bundle.source !== 'string',
+		),
 		(bundle) =>
 			gen(function* () {
-				if (bundle.type !== 'asset' || typeof bundle.source === 'string') return;
-
-				const fileExtension = yield* getFileExtension(bundle.fileName);
+				const fileExtension = getFileExtension(bundle.fileName);
 				const buffer = bundle.source;
 
 				switch (fileExtension) {
