@@ -9,7 +9,7 @@ interface CacheStorageService {
 	set: (key: string, value: string) => Effect<void, UnknownException, never>;
 }
 
-export class CacheStorage extends Context.Tag('rolldown-plugin-opmage/CacheStorage')<
+export class CacheStorage extends Context.Tag('vite-plugin-opmage/CacheStorage')<
 	CacheStorage,
 	CacheStorageService
 >() {}

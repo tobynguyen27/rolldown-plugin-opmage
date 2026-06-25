@@ -1,6 +1,6 @@
 import { getFileExtension } from '@/utils/file';
 import { forEach, gen, succeed, timed } from 'effect/Effect';
-import type { OutputAsset, OutputBundle } from 'rolldown';
+import type { OutputAsset, OutputBundle } from 'vite/rolldown';
 import { pngCompressor } from './png';
 import { jpegCompressor } from './jpeg';
 import { webpCompressor } from './webp';

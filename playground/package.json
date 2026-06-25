@@ -7,7 +7,7 @@
 	},
 	"dependencies": {
 		"@napi-rs/image": "catalog:dev",
-		"rolldown-plugin-opmage": "workspace:"
+		"vite-plugin-opmage": "workspace:"
 	},
 	"devDependencies": {
 		"vite": "catalog:build",

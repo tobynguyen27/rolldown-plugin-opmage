@@ -1,5 +1,5 @@
 import { Context } from 'effect';
-import type { PluginContext } from 'rolldown';
+import type { PluginContext } from 'vite/rolldown';
 
 interface LoggerService {
 	info: (msg: string) => void;
@@ -7,7 +7,7 @@ interface LoggerService {
 	error: (msg: string) => void;
 }
 
-export class Logger extends Context.Tag('rolldown-plugin-opmage/Logger')<Logger, LoggerService>() {}
+export class Logger extends Context.Tag('vite-plugin-opmage/Logger')<Logger, LoggerService>() {}
 
 export const createLogger = ({ info, warn, error }: PluginContext): LoggerService => ({
 	info,

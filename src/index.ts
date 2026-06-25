@@ -1,4 +1,4 @@
-import type { Plugin } from 'rolldown';
+import type { Plugin } from 'vite';
 import { Config, defaultOptions, type Options } from './options';
 import { provide, runPromise, tap, timed } from 'effect/Effect';
 import { Duration, Layer, pipe } from 'effect';
@@ -16,7 +16,7 @@ export default function Opmage(opts: Partial<Options> = {}): Plugin {
 	const CacheStorageLive = Layer.effect(CacheStorage, createCacheStorage);
 
 	return {
-		name: 'rolldown-plugin-opmage',
+		name: 'vite-plugin-opmage',
 		async generateBundle(_, bundles) {
 			const LoggerLive = Layer.succeed(Logger, createLogger(this));
 

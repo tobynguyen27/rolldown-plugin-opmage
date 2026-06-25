@@ -1,5 +1,5 @@
 import { defineConfig, type UserConfig } from 'vite-plus';
-import Opmage from 'rolldown-plugin-opmage';
+import Opmage from 'vite-plugin-opmage';
 
 const config: UserConfig = defineConfig({
 	plugins: [Opmage()],

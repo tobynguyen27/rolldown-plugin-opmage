@@ -44,4 +44,4 @@ export const defaultOptions: Options = {
 	},
 };
 
-export class Config extends Context.Tag('rolldown-plugin-opmage/Config')<Config, Options>() {}
+export class Config extends Context.Tag('vite-plugin-opmage/Config')<Config, Options>() {}

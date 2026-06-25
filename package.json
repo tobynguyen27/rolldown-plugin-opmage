@@ -1,19 +1,19 @@
 {
-	"name": "rolldown-plugin-opmage",
+	"name": "vite-plugin-opmage",
 	"version": "0.0.1",
-	"description": "A Rolldown plugin for optimizing images.",
+	"description": "A Vite plugin for optimizing images.",
 	"keywords": [
-		"rolldown-plugin"
+		"vite-plugin"
 	],
-	"homepage": "https://github.com/tobynguyen27/rolldown-plugin-opmage#readme",
+	"homepage": "https://github.com/tobynguyen27/vite-plugin-opmage#readme",
 	"bugs": {
-		"url": "https://github.com/tobynguyen27/rolldown-plugin-opmage/issues"
+		"url": "https://github.com/tobynguyen27/vite-plugin-opmage/issues"
 	},
 	"license": "MIT",
 	"author": "Toby Nguyen <hi@tobynguyen.net>",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/tobynguyen27/rolldown-plugin-opmage.git"
+		"url": "git+https://github.com/tobynguyen27/vite-plugin-opmage.git"
 	},
 	"files": [
 		"dist"
@@ -56,7 +56,7 @@
 	},
 	"peerDependencies": {
 		"@napi-rs/image": "catalog:dev",
-		"rolldown": "catalog:dev"
+		"vite": "catalog:build"
 	},
 	"devEngines": {
 		"packageManager": {

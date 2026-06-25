@@ -1,1 +1,1 @@
-# rolldown-plugin-opmage
+# vite-plugin-opmage
