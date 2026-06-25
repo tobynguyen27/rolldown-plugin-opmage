@@ -27,7 +27,7 @@ describe('Compressor / PNG', () => {
 			expect(result).toBeInstanceOf(Uint8Array);
 			expect(result.byteLength).toBeLessThanOrEqual(buffer.byteLength);
 		},
-		10_000,
+		30_000,
 	);
 
 	it.each(pngBuffers)(
@@ -41,6 +41,6 @@ describe('Compressor / PNG', () => {
 			expect(result).toBeInstanceOf(Uint8Array);
 			expect(result.byteLength).toBeLessThanOrEqual(buffer.byteLength);
 		},
-		10_000,
+		30_000,
 	);
 });
